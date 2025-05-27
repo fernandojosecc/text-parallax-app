@@ -1,17 +1,63 @@
-import TextParallax from "../components/TextParallax";
+'use client'
+
+import Picture1 from '../../public/images/1.jpg'
+
+import Picture2 from '../../public/images/2.jpg'
+
+import Picture3 from '../../public/images/3.jpg'
+
+import Lenis from 'lenis';
+
+import Image from 'next/image';
+
+import { useEffect } from 'react';
+
+import Slide from '../components/Slide';
+
+
 
 export default function Home() {
+
+
+
+  useEffect( () => {
+
+    const lenis = new Lenis()
+
+
+
+    function raf(time) {
+
+      lenis.raf(time)
+
+      requestAnimationFrame(raf)
+
+    }
+
+
+
+    requestAnimationFrame(raf)
+
+  }, [])
+
+
+
   return (
-    <main>
-      <section style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <h2 style={{ fontSize: "2rem", textAlign: "center" }}>
-          Scroll down for the show 👀✨
-        </h2>
-      </section>
 
-      <TextParallax />
+    <main className='overflow-hidden'>
 
-      <section style={{ height: "100vh" }}></section>
+      <div className='h-[100vh]'/>
+
+      <Slide src={Picture1} left={"-40%"}/>
+
+      <Slide src={Picture2} left={"-25%"}/>
+
+      <Slide src={Picture3} left={"-75%"}/>
+
+      <div className='h-[100vh]' />
+
     </main>
+
   );
+
 }
