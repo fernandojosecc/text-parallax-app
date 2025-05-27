@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 import Intro from '@/components/Intro';
 import Description from '@/components/Description';
+import Section from '@/components/Section';
 
 export default function Home() {
   useEffect(() => {
@@ -27,9 +28,10 @@ export default function Home() {
 
       {/* Text section */}
       <Description />
+      <Section /> 
 
       {/* Extra space at the bottom to let you scroll further */}
-      <div className="h-screen" />
+      {/* <div className="h-screen" /> */}
     </main>
   );
 }

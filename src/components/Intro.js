@@ -15,7 +15,7 @@ export default function Intro() {
   });
 
   // As you scroll, move the image from 0vh to 150vh vertically (parallax effect)
-  const y = useTransform(scrollYProgress, [0, 1], ['0vh', '150vh']);
+  const y = useTransform(scrollYProgress, [0, 1], ['0vh', '120vh']);
 
   return (
     // Outer box with full screen height and hidden overflow
